@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/03/02 14:34:14.000.338,=C:\Users\Tenno\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2019/03/02 14:41:07.000.218,C:\Users\Tenno\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\Tenno\Documents\Embarcadero\Studio\Projects\D-FM_190302\2\kliens\Unit2.pas</Transaction>
+    <Transaction>2019/03/02 14:41:07.000.218,C:\Users\Tenno\Documents\Embarcadero\Studio\Projects\Unit2.fmx=C:\Users\Tenno\Documents\Embarcadero\Studio\Projects\D-FM_190302\2\kliens\Unit2.fmx</Transaction>
+    <Transaction>2019/03/02 14:41:35.000.315,C:\Users\Tenno\Documents\Embarcadero\Studio\Projects\Project2.dproj=C:\Users\Tenno\Documents\Embarcadero\Studio\Projects\D-FM_190302\2\kliens\TCP_Kliens.dproj</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<PMedinnovestVendégWiFi iOSSimulator="iPhone5"/>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>

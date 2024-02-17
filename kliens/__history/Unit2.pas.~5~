@@ -1,0 +1,62 @@
+unit Unit2;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient, FMX.StdCtrls, FMX.Controls.Presentation, FMX.Edit;
+
+type
+  TForm2 = class(TForm)
+    Edit1: TEdit;
+    Edit2: TEdit;
+    CheckBox1: TCheckBox;
+    Edit3: TEdit;
+    IdTCPClient1: TIdTCPClient;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    procedure CheckBox1Change(Sender: TObject);
+    procedure Edit3KeyDown(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.fmx}
+uses IdGlobal;
+
+procedure TForm2.CheckBox1Change(Sender: TObject);
+begin
+  IdTCPClient1.Disconnect;
+  Edit4.Enabled:=not CheckBox1.IsChecked;
+  if CheckBox1.IsChecked then begin
+
+    IdTCPClient1.Host:=Edit1.Text;
+    IdTCPClient1.Port:=StrToIntDef(Edit2.Text,2019);
+
+    IdTCPClient1.Connect;
+    CheckBox1.IsChecked:=IdTCPClient1.Connected;
+
+  end;
+    //case
+end;
+
+procedure TForm2.Edit3KeyDown(Sender: TObject;
+var Key: Word; var KeyChar: Char; Shift: TShiftState);
+begin
+  if key=13 then begin
+    IdTCPClient1.IOHandler.WriteLn(Edit4.Text+': '+Edit3.Text,IndyTextEncoding_UTF8);
+    Edit5.text:=IdTCPClient1.IOHandler.ReadLn(IndyTextEncoding_UTF8);
+    Edit3.Text:='Panaszt rogzitettuk';
+    Sleep(1000);
+    Edit3.Text:='';
+  end;
+end;
+
+end.
